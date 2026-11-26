@@ -1,0 +1,53 @@
+# Options -Indexes
+# DirectoryIndex index.html
+
+# RewriteEngine On
+
+# # Redirect “slash folder” ke path tanpa slash
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# # event dan sub-path explicit
+# RewriteRule ^event/(login|register|dashboard)/?$ /event/$1.html [QSA,L]
+# RewriteRule ^event/?$ /event.html [QSA,L]
+
+# # admin dan sub-path
+# RewriteRule ^admin/(dashboard)?/?$ /admin/$1.html [QSA,L]
+# RewriteRule ^admin/?$ /admin.html [QSA,L]
+
+# # Biarkan file atau folder asli
+# RewriteCond %{REQUEST_FILENAME} -f [OR]
+# RewriteCond %{REQUEST_FILENAME} -d
+# RewriteRule ^ - [L]
+
+# # fallback default untuk path-root lainnya
+# RewriteRule ^([^/]+)/?$ /$1.html [QSA,L]
+
+Options -Indexes
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# 1. Redirect trailing slashes to non-slash version (except if it's a directory)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# 2. Handle /event (with or without query) → /event.html
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/event[\s?/] [NC]
+RewriteRule ^event/?$ /event.html [QSA,L]
+
+# 3. Handle /event/login, /event/register, /event/dashboard
+RewriteRule ^event/(login|register|dashboard)/?$ /event/$1.html [QSA,L]
+
+# 4. Handle /admin and /admin/dashboard
+RewriteRule ^admin/(dashboard)?/?$ /admin/$1.html [QSA,L]
+RewriteRule ^admin/?$ /admin.html [QSA,L]
+
+# 5. Bypass if real file or folder exists
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 6. Fallback to matching .html for other routes
+RewriteRule ^([^/]+)/?$ /$1.html [QSA,L]
+RewriteRule ^([^/]+)/([^/]+)/?$ /$1/$2.html [QSA,L]

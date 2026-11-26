@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.InsightModule = exports.RankModule = exports.EventModule = exports.ContingentModule = exports.AthleteModule = exports.CoachModule = exports.CategoryModule = exports.UserModule = exports.AuthModule = exports.UploadModule = void 0;
+var filestore_module_1 = require("./filestore/filestore.module");
+Object.defineProperty(exports, "UploadModule", { enumerable: true, get: function () { return filestore_module_1.UploadModule; } });
+var module_1 = require("./auth/module");
+Object.defineProperty(exports, "AuthModule", { enumerable: true, get: function () { return module_1.AuthModule; } });
+var module_2 = require("./user/module");
+Object.defineProperty(exports, "UserModule", { enumerable: true, get: function () { return module_2.UserModule; } });
+var module_3 = require("./category/module");
+Object.defineProperty(exports, "CategoryModule", { enumerable: true, get: function () { return module_3.CategoryModule; } });
+var module_4 = require("./coach/module");
+Object.defineProperty(exports, "CoachModule", { enumerable: true, get: function () { return module_4.CoachModule; } });
+var module_5 = require("./athlete/module");
+Object.defineProperty(exports, "AthleteModule", { enumerable: true, get: function () { return module_5.AthleteModule; } });
+var module_6 = require("./contingent/module");
+Object.defineProperty(exports, "ContingentModule", { enumerable: true, get: function () { return module_6.ContingentModule; } });
+var module_7 = require("./event/module");
+Object.defineProperty(exports, "EventModule", { enumerable: true, get: function () { return module_7.EventModule; } });
+var module_8 = require("./rank/module");
+Object.defineProperty(exports, "RankModule", { enumerable: true, get: function () { return module_8.RankModule; } });
+var module_9 = require("./insight/module");
+Object.defineProperty(exports, "InsightModule", { enumerable: true, get: function () { return module_9.InsightModule; } });
+//# sourceMappingURL=index.js.map

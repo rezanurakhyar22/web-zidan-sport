@@ -1,0 +1,7 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/zida4418/api-v2.zidansport.org"
+PassengerBaseURI "/"
+PassengerNodejs "/home/zida4418/nodevenv/api-v2.zidansport.org/22/bin/node"
+PassengerAppType node
+PassengerStartupFile dist/main.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END

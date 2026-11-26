@@ -1,0 +1,1 @@
+{"version":3,"file":"module.js","sourceRoot":"","sources":["../../src/tasks/module.ts"],"names":[],"mappings":";;;;;;;;;AAAA,2CAAwC;AACxC,+CAAkD;AAClD,uCAAyC;AACzC,uDAA4D;AAMrD,IAAM,WAAW,GAAjB,MAAM,WAAW;CAAG,CAAA;AAAd,kCAAW;sBAAX,WAAW;IAJvB,IAAA,eAAM,EAAC;QACN,OAAO,EAAE,CAAC,yBAAc,CAAC,OAAO,EAAE,CAAC;QACnC,SAAS,EAAE,CAAC,sBAAY,EAAE,wBAAc,CAAC;KAC1C,CAAC;GACW,WAAW,CAAG"}

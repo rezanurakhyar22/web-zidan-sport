@@ -1,0 +1,10 @@
+export { UploadModule } from './filestore/filestore.module';
+export { AuthModule } from './auth/module';
+export { UserModule } from './user/module';
+export { CategoryModule } from './category/module';
+export { CoachModule } from './coach/module';
+export { AthleteModule } from './athlete/module';
+export { ContingentModule } from './contingent/module';
+export { EventModule } from './event/module';
+export { RankModule } from './rank/module';
+export { InsightModule } from './insight/module';

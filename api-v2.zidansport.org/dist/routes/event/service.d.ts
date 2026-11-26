@@ -1,0 +1,35 @@
+import { Sequelize } from "sequelize";
+import { AthleteModel, AthletePointHistoryModel, ContingentModel, EventCategoryMatchResultModel, EventCategoryModel, EventContingentModel, EventModel, EventParticipantsModel } from "src/models";
+import { QueryGet, ResponseEntity } from "src/types";
+import { CancelReasonDTO, EventDTO, EventMatchResultDTO, RegisterToEventDTO } from "src/dtos";
+import { Response } from "express";
+export declare class EventService {
+    private readonly sequelize;
+    private contingentModel;
+    private athleteModel;
+    private eventModel;
+    private eventCategoryModel;
+    private eventParticipantsModel;
+    private eventContingentModel;
+    private eventCategoryMatchResultModel;
+    private athletePointHistoryModel;
+    constructor(sequelize: Sequelize, contingentModel: typeof ContingentModel, athleteModel: typeof AthleteModel, eventModel: typeof EventModel, eventCategoryModel: typeof EventCategoryModel, eventParticipantsModel: typeof EventParticipantsModel, eventContingentModel: typeof EventContingentModel, eventCategoryMatchResultModel: typeof EventCategoryMatchResultModel, athletePointHistoryModel: typeof AthletePointHistoryModel);
+    findAllEvents(query: QueryGet): Promise<ResponseEntity>;
+    getInfo(): Promise<ResponseEntity>;
+    getCategoryWinners(id: number): Promise<ResponseEntity>;
+    createEvent(data: EventDTO): Promise<ResponseEntity>;
+    exportParticipants(res: Response, eventId: number): Promise<void>;
+    findEventById(id: number): Promise<ResponseEntity>;
+    findEventByCode(code: string): Promise<ResponseEntity>;
+    findEventCategoryParticipants(id: number): Promise<ResponseEntity>;
+    getMatchResultsByCategory(id: number): Promise<ResponseEntity>;
+    updateEvent(id: number, data: EventDTO): Promise<ResponseEntity>;
+    cancelEvent(id: number, data: CancelReasonDTO): Promise<ResponseEntity>;
+    postMatchResult(id: number, data: EventMatchResultDTO): Promise<ResponseEntity>;
+    registerToEvent(id: number, data: RegisterToEventDTO): Promise<ResponseEntity>;
+    deleteCategoryEvent(id: number): Promise<ResponseEntity>;
+    deleteParticipantEvent(event_id: number, id: number, user: any): Promise<ResponseEntity>;
+    deleteContingentEvent(event_id: number, id: number): Promise<ResponseEntity>;
+    deleteMatchResult(id: number): Promise<ResponseEntity>;
+    delete(id: number): Promise<ResponseEntity>;
+}

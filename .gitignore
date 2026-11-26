@@ -1,0 +1,39 @@
+# Ignore everything in root by default (cPanel backup, system & temp files)
+/*
+
+# Allow root project files (Next.js Auth App)
+!.gitignore
+!package.json
+!package-lock.json
+!next.config.ts
+!next-env.d.ts
+!postcss.config.mjs
+!tsconfig.json
+!server.js
+
+# Allow Next.js Auth App directories
+!app/
+!components/
+!lib/
+!prisma/
+!public/
+!scripts/
+
+# Allow Backend APIs & Static Frontend
+!api-v2.zidansport.org/
+!api.zidansport.org/
+!public_html/
+
+# Exclude secrets, dependencies, build artifacts, logs, archives & large uploads
+**/.env
+**/.env.*
+!**/.env.example
+**/node_modules/
+**/.next/
+**/tmp/
+**/*.log
+**/*.zip
+**/.DS_Store
+**/.ftpquota
+api-v2.zidansport.org/public/
+api.zidansport.org/public/
